@@ -9,7 +9,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const SpotifyWebApi = require('spotify-web-api-node');
 
-const redirectURI = 'http://localhost:3000'
+const redirectURI = 'https://cpsc3720-fitness-app.herokuapp.com/'
 const PORT = process.env.PORT || 3000
 const app = express()
 app.use(bodyParser.json())

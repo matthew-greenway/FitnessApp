@@ -6,14 +6,14 @@
  */
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-
+const redirectURI = 'https://cpsc3720-fitness-app.herokuapp.com/'
 export default function useAuth(code) {
     const [accessToken, setAccessToken] = useState()
     const [refreshToken, setRefreshToken] = useState()
     const [expiresIn, setExpiresIn] = useState()
 
     useEffect(() => {
-        axios.post('http://localhost:3000/login', {
+        axios.post('https://cpsc3720-fitness-app.herokuapp.com/login', {
             code,
         }).then(res => {
             // gets all my tokens
@@ -30,7 +30,7 @@ export default function useAuth(code) {
     useEffect(() => {
         if(!refreshToken || !expiresIn) return
         const interval = setInterval(() => {
-            axios.post('http://localhost:3000/refresh', {
+            axios.post('https://cpsc3720-fitness-app.herokuapp.com/refresh', {
                 refreshToken,
             }).then(res => {
                 setAccessToken(res.data.accessToken)
