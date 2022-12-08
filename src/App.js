@@ -10,11 +10,16 @@ const code = new URLSearchParams(window.location.search).get('code');
 function App() {
   const [data, setData] = useState({});
   const [spotButton, setSpotButton] = useState(false);
+  const [genWorkoutButton, setGenWorkoutButton] = useState(false);
   const [location, setLocation] = useState("");
   const zipurl = `https://api.openweathermap.org/data/2.5/weather?zip=${location},us&appid=7c8b9bc22174b70ea79456c113c8a954&units=imperial`;
 
   function spotButtonHandler () {
     setSpotButton(true);
+  }
+
+  function genWorkoutButtonHandler () {
+    setGenWorkoutButton(true);
   }
 
   const searchLocation = (event) => {
@@ -27,7 +32,7 @@ function App() {
     }
   };
 
-  if (!spotButton && !code) {
+  if (!spotButton && !genWorkoutButton && !code) {
     return (
       <div className="app">
         <h3> WORKOUT APP  </h3>
@@ -35,7 +40,7 @@ function App() {
 
         <div>
 
-          <button style={{ width: 420, backgroundColor: '#F56600', marginTop: 20, minHeight: 50, }}>
+          <button style={{ width: 420, backgroundColor: '#F56600', marginTop: 20, minHeight: 50, }} onClick={genWorkoutButtonHandler}>
             <h2 >Generate Workout</h2>
           </button>
 
@@ -91,7 +96,7 @@ function App() {
         <div>
           {(() => {
             if (data.weather) {
-              if (data.main.temp <= 50.0 || data.weather[0].main == "Mist" || data.weather[0].main == "Rain" || data.weather[0].main == "Snow") {
+              if (data.main.temp <= 50.0 || data.weather[0].main === "Mist" || data.weather[0].main === "Rain" || data.weather[0].main === "Snow") {
                 return <h4>Weather looks bad out there! Maybe stay inside and do some calisthenics?</h4>
               } else {
                 return <h4>Weather looks nice out there! Maybe go for a run?</h4>;

@@ -4,7 +4,6 @@ import useAuth from './useAuth'
 import SpotifyWebApi from 'spotify-web-api-node'
 import TrackSearchResult from './TrackSearchResult'
 import Player from './Player'
-import SpotifyPlayer from 'react-spotify-web-playback'
 
 const spotifyApi = new SpotifyWebApi({
     clientId: '2387a2a4c594439a9f66f97fb886ca59',
@@ -20,41 +19,29 @@ export default function Dashboard({ code }) {
     const [choosePlaylists, setChoosePlaylists] = useState(false)
     const [chooseTopSongs, setChooseTopSongs] = useState(false)
     const [chooseSearchSongs, setChooseSearchSongs] = useState(false)
-    const [chooseMainMenu, setChooseMainMenu] = useState(false)
     const [artistID, setArtistID] = useState('')
     const [market, setMarket] = useState('')
-    const [play, setPlay] = useState(false)
 
     // Handles Search by Playlist button back end
     function fChoosePlaylists() {
         setChoosePlaylists(true)
         setChooseTopSongs(false)
         setChooseSearchSongs(false)
-        setChooseMainMenu(false)
         setSearch('')
     }
     // Handles Search Top Songs by Artist button back end
     function fChooseTopSongs() {
         setChooseTopSongs(true)
         setChooseSearchSongs(false)
-        setChooseMainMenu(false)
         setChoosePlaylists(false)
         setSearch('')
     }
     // Handles Search Songs button back end
     function fChooseSearchSongs(){
         setChooseSearchSongs(true)
-        setChooseMainMenu(false)
         setChoosePlaylists(false)
         setChooseTopSongs(false)
         setSearch('')
-    }
-    // Handles Main Menu button back end
-    function fChooseMainMenu(){
-        setChooseMainMenu(true)
-        setChooseSearchSongs(false)
-        setChoosePlaylists(false)
-        setChooseTopSongs(false)
     }
 
     function chooseTrack(track) {
@@ -169,7 +156,7 @@ export default function Dashboard({ code }) {
                     </center>
                 </button>&nbsp;&nbsp;
                 <a href={homePage}>
-                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }} onClick={fChooseMainMenu}>
+                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }}>
                         <center>
                             <h6>Main Menu / Log Out</h6>
                         </center>
@@ -219,7 +206,7 @@ export default function Dashboard({ code }) {
                     </center>
                 </button>&nbsp;&nbsp;
                 <a href={homePage}>
-                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }} onClick={fChooseMainMenu}>
+                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }}>
                         <center>
                             <h6>Main Menu / Log Out</h6>
                         </center>
@@ -271,7 +258,7 @@ export default function Dashboard({ code }) {
                     </center>
                 </button>&nbsp;&nbsp;
                 <a href={homePage}>
-                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }} onClick={fChooseMainMenu}>
+                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }}>
                         <center>
                             <h6>Main Menu / Log Out</h6>
                         </center>
@@ -318,7 +305,7 @@ export default function Dashboard({ code }) {
                     </center>
                 </button>&nbsp;&nbsp;
                 <a href={homePage}>
-                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }} onClick={fChooseMainMenu}>
+                    <button style={{ width: 300, backgroundColor: '#522D80', marginTop: 20, minHeight: 100, }}>
                         <center>
                             <h6>Main Menu / Log Out</h6>
                         </center>
