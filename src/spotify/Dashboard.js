@@ -9,7 +9,7 @@ const spotifyApi = new SpotifyWebApi({
     clientId: '2387a2a4c594439a9f66f97fb886ca59',
 })
 
-const homePage = 'http://localhost:3000'
+const homePage = 'https://cpsc3720-fitness-app.herokuapp.com/'
 
 export default function Dashboard({ code }) {
     const accessToken = useAuth(code)

@@ -5,19 +5,23 @@
  * Handles server for authorization
  */
 const express = require('express')
-const cors = require('cors')
+const path = require('path')
 const bodyParser = require('body-parser')
 const SpotifyWebApi = require('spotify-web-api-node');
 
+const redirectURI = 'https://cpsc3720-fitness-app.herokuapp.com/'
+const PORT = process.env.PORT || 3000
 const app = express()
-app.use(cors())
 app.use(bodyParser.json())
+
+const buildPath = path.join(__dirname, '..', 'build')
+app.use(express.static(buildPath))
 
 app.post('/refresh', (req, res) => {
     const refreshToken = req.body.refreshToken
     console.log("hi")
     const spotifyApi = new SpotifyWebApi( {
-        redirectUri: 'http://localhost:3000',
+        redirectUri: redirectURI,
         clientId: '2387a2a4c594439a9f66f97fb886ca59',
         clientSecret: 'daa2e7aa27fa4fc7856d79d84348cab9',
         refreshToken
@@ -37,7 +41,7 @@ app.post('/refresh', (req, res) => {
 app.post('/login', (req, res) => {
     const code = req.body.code
     const spotifyApi = new SpotifyWebApi( {
-        redirectUri: 'http://localhost:3000',
+        redirectUri: redirectURI,
         clientId: '2387a2a4c594439a9f66f97fb886ca59',
         clientSecret: 'daa2e7aa27fa4fc7856d79d84348cab9'
     })
@@ -54,4 +58,6 @@ app.post('/login', (req, res) => {
     })
 })
 
-app.listen(3001)
+app.listen(PORT, () => {
+    console.log(`server started on port ${PORT}`)
+})
