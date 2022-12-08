@@ -13,7 +13,7 @@ export default function useAuth(code) {
     const [expiresIn, setExpiresIn] = useState()
 
     useEffect(() => {
-        axios.post('https://cpsc3720-fitness-app.herokuapp.com/login', {
+        axios.post('/login', {
             code,
         }).then(res => {
             // gets all my tokens
@@ -30,7 +30,7 @@ export default function useAuth(code) {
     useEffect(() => {
         if(!refreshToken || !expiresIn) return
         const interval = setInterval(() => {
-            axios.post('https://cpsc3720-fitness-app.herokuapp.com/refresh', {
+            axios.post('/refresh', {
                 refreshToken,
             }).then(res => {
                 setAccessToken(res.data.accessToken)
