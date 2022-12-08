@@ -6,7 +6,6 @@
  */
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-const redirectURI = 'https://cpsc3720-fitness-app.herokuapp.com/'
 export default function useAuth(code) {
     const [accessToken, setAccessToken] = useState()
     const [refreshToken, setRefreshToken] = useState()
