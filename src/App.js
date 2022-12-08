@@ -108,6 +108,11 @@ function App() {
     );
 
   }
+  else if (genWorkoutButton) {
+    return (
+      <div> placeholder </div>
+    )
+  }
   else{
     return (
       <Spotify />
