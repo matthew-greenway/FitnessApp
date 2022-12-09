@@ -34,9 +34,9 @@ Scope:
 A fitness app that allows the user to generate workouts based on muscle group, (possibly if we can make it work) equipment available, and the weather. It will also be connected to spotify which provides the user with the ability to search for songs or playlists to play.
 
 Group Members:
-Matthew Steven Greenway
-Ward F Eldred III
-Charles Patrick Germany
-Don N Tran
-Michael Aloysius Harris IV
-Maddux Charles Rhodes
+  Matthew Steven Greenway
+  Ward F Eldred III
+  Charles Patrick Germany
+  Don N Tran
+  Michael Aloysius Harris IV
+  Maddux Charles Rhodes
