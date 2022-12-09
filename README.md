@@ -1,13 +1,14 @@
-1: https://cpsc3720-fitness-app.herokuapp.com/ ------ website
-2: Test Username: cpsc3720fitnessapp@gmail.com  test PW: cpsc3720!
+WEBSITE: https://cpsc3720-fitness-app.herokuapp.com/ 
+
 
 User Instructions:
   Spotify Instructions:
   1. Hit the spotify connection page button
   2. Hit login with spotify
   3. Hit login with gmail
-  4. Enter the username and password
-  5. Login
+  4. Enter Username: cpsc3720fitnessapp@gmail.com
+  5. Enter PW: cpsc3720!
+  6. Login
 
   Exercise database instructions:
   1. Hit the workout information button
@@ -31,3 +32,11 @@ SpotifyforDevelopers Web API
 
 Scope: 
 A fitness app that allows the user to generate workouts based on muscle group, (possibly if we can make it work) equipment available, and the weather. It will also be connected to spotify which provides the user with the ability to search for songs or playlists to play.
+
+Group Members:
+Matthew Steven Greenway
+Ward F Eldred III
+Charles Patrick Germany
+Don N Tran
+Michael Aloysius Harris IV
+Maddux Charles Rhodes
