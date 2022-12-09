@@ -3,6 +3,8 @@ import axios from "axios";
 import './App.css';
 import yokedMan from './16419960151339.jpg';
 import Spotify from './spotify/Spotify.js';
+import WorkOutGenerator from "./workOutGenerator/WorkOutGenerator.js";
+
 console.log(yokedMan);
 
 const code = new URLSearchParams(window.location.search).get('code');
@@ -110,7 +112,7 @@ function App() {
   }
   else if (genWorkoutButton) {
     return (
-      <div> placeholder </div>
+      <div> <WorkOutGenerator/> </div>
     )
   }
   else{

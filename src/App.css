@@ -52,6 +52,10 @@ p2 {
   text-align: center;
 }
 
+p3 {
+  color: #fff;
+}
+
 h1 {
   font-size: 5.4rem;
   text-align: center;
@@ -85,7 +89,21 @@ h6 {
 
 
 h3 {
-  font-size: 3rem;
+  font-size: 2rem;
+  letter-spacing: 0.9px;
+  background: linear-gradient(
+    90deg,
+    rgba(249, 211, 180, 1) 100%,
+    rgba(249, 211, 180, 0) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: fit-content;
+}
+
+h7 {
+  font-size: 2rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
     90deg,
